@@ -1,0 +1,30 @@
+# I have created the following datasets titled Famous People / Genres. This analysis utilizes the data from these datasets.
+
+CREATE TABLE famous_people (id INTEGER PRIMARY KEY, name TEXT, genre INTEGER);
+INSERT INTO famous_people VALUES (1, "Donald Glover", 1);
+INSERT INTO famous_people VALUES (2, "Taylor Swift" , 2);
+INSERT INTO famous_people VALUES (3, "Olivia Rodrigo", 2);
+INSERT INTO famous_people VALUES (4, "Dwanyne Carter", 1);
+INSERT INTO famous_people VALUES (5, "Luke Bryan", 3);
+INSERT INTO famous_people VALUES (6, "Blake Shelton", 3);
+INSERT INTO famous_people VALUES (7, "Aretha Franklin", 4);
+INSERT INTO famous_people VALUES (8, "Usher Raymond IV", 4);
+INSERT INTO famous_people VALUES (9, "Justin Timberlake", 2);
+INSERT INTO famous_people VALUES (10, " Johnathan Smith", 2);
+INSERT INTO famous_people VALUES (11, "Bob Marley", 5);
+INSERT INTO famous_people VALUES (12, "Peter Tosh", 5);
+
+CREATE TABLE genre (id INTEGER PRIMARY KEY, name TEXT, genre_id INTEGER);
+INSERT INTO genre VALUES (1, "Hip Hop", 1);
+INSERT INTO genre VALUES (2, "Pop", 2);
+INSERT INTO genre VALUES (3, "Country", 3);
+INSERT INTO genre VALUES (4, "R&B Soul", 4);
+INSERT INTO genre VALUES (5, "Ragae", 5);
+
+# Analysis: Select the full name of famous people along with their genre of music, order your findings by genre.
+
+SELECT famous_people.name as Singers, genre.name as genre
+FROM famous_people
+LEFT OUTER JOIN genre
+ON genre.id=genre
+ORDER BY genre
